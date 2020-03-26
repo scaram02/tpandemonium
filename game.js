@@ -7,7 +7,7 @@ class Game {
   constructor() {
     this.background = new Background();
     this.player = new Player();
-    // this.tp = new Tp();
+    this.tp = new Tp();
     this.tps = [];
   }
 
@@ -18,9 +18,9 @@ class Game {
   }
 
   setup() {
-    console.log("aaaaaaaa game setup");
+    // console.log("aaaaaaaa game setup");
     this.player.setup();
-    // image(this.icons, 100, 300, 100, 300);
+    // image(this.tps, 100, 300, 100, 300);
    
   }
 
@@ -71,14 +71,29 @@ class Game {
    
 
    
-    // if (frameCount > 120 && frameCount % 120 === 0) {
-    //   this.tps.push(new Trash());
-    // }
-    // this.tps.forEach((trash, index) => {
-    //   if (!trash.img) trash.preload();
-    //   trash.draw();
+    if (frameCount > 120 && frameCount % 120 === 0) {
+      this.tps.push(new Tp());
+    }
+    this.tp.preload();
+    this.tp.draw();
 
-    //   if (this.isCollision(trash, this.player)) {
+    // this.tps.forEach((tp, index) => {
+    //   (tp, index) => {
+    //     tp.draw();
+      
+
+    //     if (tp.x + tp.width <= 0) {
+    //         //   remove obstacle
+    //         this.tps.splice(index, 1);
+    //       }
+        
+    //       if (this.isCollision(tp, this.player)) {
+    //         console.log("GAME OVER");
+    //         noLoop();
+    //       }
+    //     } 
+    // }
+    //   if (this.isCollision(tp, this.player)) {
     //     this.tps.splice(index, 1);
     //   }
 

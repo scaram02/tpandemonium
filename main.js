@@ -18,7 +18,7 @@ function setup() {
   gameCanvas.parent("gameCanvas");
   game.floor = 700;
   game.setup();
-  mode = 0;
+  mode = 2;
   textSize(32);
   textFont("Georgia");
   fill("darkgreen");
@@ -54,28 +54,28 @@ function draw() {
 }
 
 //  screen toggle
-function keyPressed() {
-  if (keyCode === ENTER) {
-    if (mode === 0) {
-      mode = 1;
-      draw();
-    } else if (mode == 1) {
-      mode = 2;
-      draw();
-    } else if (gameEnd) {
-      mode = 0;
-      score = 0;
-      missed = 0;
-      game.trashes = [];
-      themeSong.stop();
-      loop();
+// function keyPressed() {
+//   if (keyCode === ENTER) {
+//     if (mode === 0) {
+//       mode = 1;
+//       draw();
+//     } else if (mode == 1) {
+//       mode = 2;
+//       draw();
+//     } else if (gameEnd) {
+//       mode = 0;
+//       score = 0;
+//       missed = 0;
+//       game.trashes = [];
+//       themeSong.stop();
+//       loop();
 
-      draw();
-    }
-  } else if (keyCode === 32) {
-    game.player.changeColor();
-  }
-}
+//       draw();
+//     }
+//   } else if (keyCode === 32) {
+//     game.player.changeColor();
+//   }
+// }
 
 
 //   function playsound() 
@@ -86,9 +86,15 @@ function keyPressed() {
 //     } 
 //   }
 
+function keyPressed(){
+    if (keyCode === 32){
+        game.player.jump()
+    }
+}
+
 
 window.addEventListener(
-  "keydown",
+  "keypressed",
   function(e) {
     // space and arrow keys
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {

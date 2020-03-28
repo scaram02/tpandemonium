@@ -62,18 +62,16 @@ function draw() {
 //     } else if (mode == 1) {
 //       mode = 2;
 //       draw();
-//     } else if (gameEnd) {
-//       mode = 0;
-//       score = 0;
-//       missed = 0;
-//       game.trashes = [];
-//       themeSong.stop();
+//     // } else if (gameEnd) {
+//       // mode = 0;
+//       // score = 0;
+//       // missed = 0;
+//       game.tps = [];
+//       // themeSong.stop();
 //       loop();
 
 //       draw();
 //     }
-//   } else if (keyCode === 32) {
-//     game.player.changeColor();
 //   }
 // }
 

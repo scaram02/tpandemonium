@@ -1,8 +1,3 @@
-
-
-
-
-
 class Background {
     constructor() {
       // console.log("background constructor");
@@ -17,6 +12,7 @@ class Background {
 
       this.bgSky = loadImage('assets/test.png');
       this.bgShelves = loadImage('assets/shelves.png');
+    
     }
   
     draw() {

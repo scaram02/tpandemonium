@@ -1,8 +1,8 @@
 class Player {
     constructor() {
-      //
+
       this.x = 250;
-    //   this.y = 290
+   
       this.velocity = 0;
       this.gravity = 0.2;
       this.jumpCount = 0;
@@ -13,12 +13,12 @@ class Player {
     }
   
     setup() {
-      this.y = height - 420;
+      this.y = height - 200;
   
       this.originalY = this.y;
   
-      this.width = this.img.width * 2;
-      this.height = this.img.height * 2;
+      this.width = this.img.width;
+      this.height = 200;
     }
   
     draw() {
@@ -38,7 +38,7 @@ class Player {
     }
   
     jump() {
-      if (this.jumpCount < 2) {
+      if (this.jumpCount < 3) {
         this.velocity = -8;
         this.jumpCount++;
       }

@@ -1,5 +1,6 @@
 let score = 0;
 let gameEnd = false;
+let shing;
 
 class Game {
   constructor() {
@@ -14,6 +15,7 @@ class Game {
   preload() {
     this.background.preload();
     this.player.preload();
+    shing = loadSound("assets/shing2.wav")
 
   }
 
@@ -41,7 +43,22 @@ class Game {
       (shopper, index) => {
         if (!shopper.img) shopper.preload();
           shopper.draw();
+
+          // removes shopper when off screen
+    if (this.shopper.x + this.shopper.width <= 0){
+  this.shoppers.splice(index, 1)
+}
+
+    // to end the game
+     if (this.isShopperCollision(shopper, this.player)) {
+      console.log("GAME OVER");
+      noLoop();
+}
+
     }
+
+
+    
     )
 
 // TP appears!
@@ -65,16 +82,12 @@ if (this.isCollision(tp, this.player)) {
 
 if (this.isCollision(tp, this.player)){
   score++
+  shing.play();
   console.log(score)
 }
 
 
 
-//to end the game
-  if (this.isShopperCollision(this.shopper, this.player)) {
-    console.log("GAME OVER");
-    noLoop();
-  }
 
 
 

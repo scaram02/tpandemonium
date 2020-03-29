@@ -7,10 +7,8 @@ const game = new Game();
 
 function preload() {
   game.preload();
-//   yaySound = loadSound("assets/yay.wav"); 
-//   noooSound = loadSound("assets/no.wav");
-//   floorSound = loadSound("assets/floor.wav");
-//   themeSong = loadSound("assets/bugdom.mp3");
+
+shing = loadSOund("assets/shing2.wav")
 }
 
 function setup() {
@@ -48,9 +46,17 @@ function draw() {
     // playsound();
   }
 
-//   if (keyIsPressed(32)) {
-//     game.player.jump();
-//   }
+
+
+  push();
+  fill('white');
+  noStroke();
+  rect(15, 15, 200, 50, 10);
+  pop();
+  fill("brown");
+  text("Score: " + score, 30, 50);
+
+
 }
 
 //  screen toggle

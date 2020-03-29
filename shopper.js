@@ -9,8 +9,8 @@ let object = [
 class Shopper {
   constructor() {
     this.x = 1000; 
-    // this.y = Math.random() * 500
-    this.y = 550;
+    this.y = Math.random() * 500
+
 
     this.width = 150;
     this.height = 150;

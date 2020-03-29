@@ -1,36 +1,36 @@
 class Background {
     constructor() {
-      // console.log("background constructor");
-    //   this.xClouds = 0;
-      this.xSky = 0;
+    
+      this.xStore = 0;
       this.xShelves = 0;
+
 
     }
   
     preload() {
       // console.log("background preload");
 
-      this.bgSky = loadImage('assets/test.png');
-      this.bgShelves = loadImage('assets/shelves.png');
+      this.bgStore = loadImage('assets/test.png');
+      this.bgShelves = loadImage('assets/emptyshelf.png');
     
     }
   
     draw() {
   
-      this.xSky -= 1;
-      image(this.bgSky, this.xSky, 0, width);
-      image(this.bgSky, this.xSky + width, 0, width);
+      this.xStore -= 1;
+      image(this.bgStore, this.xStore, 0, width);
+      image(this.bgStore, this.xStore + width, 0, width);
   
       // this.xSky = this.xSky % width;
-      if (this.xSky <= -width) {
-        this.xSky = 0;
+      if (this.xStore <= -width) {
+        this.xStore = 0;
       }
   
      
   
       this.xShelves -= 4;
-      image(this.bgShelves, this.xShelves, 100, width);
-      image(this.bgShelves, this.xShelves + width, 100, width);
+      image(this.bgShelves, this.xShelves, 120, width);
+      image(this.bgShelves, this.xShelves + width, 120, width);
   
       if (this.xShelves <= -width) {
         this.xShelves = 0;

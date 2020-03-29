@@ -7,6 +7,8 @@ class Game {
     this.player = new Player();
     this.tp = new Tp();
     this.tps = [];
+    this.shopper = new Shopper();
+    this.shoppers = []
   }
 
   preload() {
@@ -17,15 +19,31 @@ class Game {
 
   setup() {
     this.player.setup();
-
-
+    // console.log(this.player.width, this.player.height)
   }
+
+
+
+
+
 
 
   draw() {
     this.background.draw();
     this.player.draw();
-    
+
+
+    // shopper appears!
+    if (frameCount % 320 === 0){
+      this.shoppers.push(new Shopper())
+    }
+    this.shoppers.forEach(
+      (shopper, index) => {
+        if (!shopper.img) shopper.preload();
+          shopper.draw();
+    }
+    )
+
 // TP appears!
 if (frameCount % 60 === 0) {
       this.tps.push(new Tp ());
@@ -40,14 +58,62 @@ if (this.tp.x + this.tp.width <= 0){
   this.tps.splice(index, 1)
 }
 
+// removes TP upon collide
+if (this.isCollision(tp, this.player)) {
+  this.tps.splice(index, 1);
+}
+
+if (this.isCollision(tp, this.player)){
+  score++
+  console.log(score)
+}
+
+
+
+//to end the game
+  if (this.isShopperCollision(this.shopper, this.player)) {
+    console.log("GAME OVER");
+    noLoop();
   }
-)
+
+
+
+})
+
+
+
+}
+
+
+// tp collision
+isCollision(tp, player) {
+  if (player.x + player.width < tp.x || tp.x + tp.width < player.x){
+    return false
+  }
+  if (player.y > tp.y + tp.height ||
+    tp.y > player.y + player.height
+  ) {
+  return false;
+  }
+  return true;
+}
+
+
+isShopperCollision(shopper, player) {
+  if (player.x + player.width < shopper.x || shopper.x + shopper.width < player.x){
+    return false
+  }
+  if (player.y > shopper.y + shopper.height ||
+    shopper.y > player.y + player.height
+  ) {
+  return false;
+  }
+  return true;
+}
+
+
+
 
 
 
     }
-    };
-
-
-
-

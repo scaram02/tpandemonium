@@ -1,12 +1,12 @@
-
+let tp;
 class Tp {
   constructor() {
     this.x = 1000; 
     // this.y = Math.random() * 500
     this.y = Math.floor(Math.random() * (700 - 100 + 1) + 200);
 
-    this.width = 50;
-    this.height = 50;
+    this.width = 65;
+    this.height = 65;
   }
 
   preload() {
@@ -24,7 +24,10 @@ if (this.x > 1000){
 }
     image(this.img, this.x, this.y, this.width, this.height);
 
-    console.log("Karenennnn")
+    // console.log("Karenennnn get the tp")
+
+   
   }
+
 }
 

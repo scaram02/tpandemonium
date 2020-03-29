@@ -17,8 +17,10 @@ class Player {
   
       this.originalY = this.y;
   
-      this.width = this.img.width;
+      this.width = 210;
       this.height = 200;
+
+      // console.log("widrh, height", this.img.width, this.img.height)
     }
   
     draw() {

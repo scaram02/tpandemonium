@@ -3,7 +3,7 @@ const game = new Game();
 // let noooSound;
 // let floorSound;
 // let themeSong;
-// let mode;
+let mode;
 
 function preload() {
   game.preload();
@@ -16,12 +16,12 @@ function setup() {
   gameCanvas.parent("gameCanvas");
   game.floor = 700;
   game.setup();
-  mode = 2;
+  mode = 0;
   textSize(32);
   textFont("Georgia");
   fill("darkgreen");
-  bg = loadImage("assets/store.png");
-  startScr = loadImage("assets/start.jpg");
+  bg = loadImage("assets/instruc.png");
+  startScr = loadImage("assets/startscr.png");
 
 //   themeSong.loop();  
 //   themeSong.stop();
@@ -32,8 +32,13 @@ function draw() {
 
   if (mode === 0) {
     background(startScr);
-    fill('darkgreen');
-    text("Press enter to start!", 365, 680);
+    push();
+  fill("lightblue");
+  noStroke();
+  rect(0, 335, 700, 50, 5, 5);
+  pop();
+    fill('brown');
+    text("Press enter to start!", 357, 370);
   }
   if (mode === 1) {
     background(bg);
@@ -48,52 +53,41 @@ function draw() {
 
 
 
-  push();
-  fill('white');
-  noStroke();
-  rect(15, 15, 200, 50, 10);
-  pop();
-  fill("brown");
-  text("Score: " + score, 30, 50);
 
 
 }
 
-//  screen toggle
-// function keyPressed() {
-//   if (keyCode === ENTER) {
-//     if (mode === 0) {
-//       mode = 1;
-//       draw();
-//     } else if (mode == 1) {
-//       mode = 2;
-//       draw();
-//     // } else if (gameEnd) {
-//       // mode = 0;
-//       // score = 0;
-//       // missed = 0;
-//       game.tps = [];
-//       // themeSong.stop();
-//       loop();
 
-//       draw();
-//     }
-//   }
-// }
+  // function playsound() 
+  // {
+  //   if(themeSong.isPlaying() == false) 
+  //   {
+  //     themeSong.play();
+  //   } 
+  // }
 
 
-//   function playsound() 
-//   {
-//     if(themeSong.isPlaying() == false) 
-//     {
-//       themeSong.play();
-//     } 
-//   }
-
+  // screen toggle
 function keyPressed(){
-    if (keyCode === 32){
+    if (mode === 2 && keyCode === 32){
         game.player.jump()
+    } else if (keyCode === ENTER){
+      if (mode === 0) {
+        mode = 1;
+        draw();
+      } else if (mode == 1) {
+        mode = 2;
+        draw();
+      } else if (gameEnd) {
+        mode = 0;
+        score = 0;
+        game.trashes = [];
+        themeSong.stop();
+        loop();
+        draw();
+      }
     }
+    
 }
 
 

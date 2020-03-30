@@ -1,19 +1,19 @@
 let shopper;
 
 let object = [
-    {imgUrl: "assets/shopper3.png"},
-    {imgUrl: "assets/shopper3.png"},
-    {imgUrl: "assets/shopper3.png"}
+    {imgUrl: "assets/cart.png"},
+    {imgUrl: "assets/cart.png"},
+    {imgUrl: "assets/cart.png"}
 ]
 
 class Shopper {
   constructor() {
     this.x = 1000; 
-    this.y = Math.random() * 500
+    // this.y = Math.random() * 400
+this.y = 475
 
-
-    this.width = 150;
-    this.height = 150;
+    this.width = 225;
+    this.height = 225;
 
     this.randomShopper = object[Math.floor(Math.random() * object.length)]
     this.imgUrl = this.randomShopper.imgUrl

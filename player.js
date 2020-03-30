@@ -13,12 +13,12 @@ class Player {
     }
   
     setup() {
-      this.y = height - 200;
+      this.y = height - 210;
   
       this.originalY = this.y;
   
-      this.width = 210;
-      this.height = 200;
+      this.width = 180;
+      this.height = 210;
 
       // console.log("widrh, height", this.img.width, this.img.height)
     }

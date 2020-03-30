@@ -94,6 +94,16 @@ if (this.isCollision(tp, this.player)){
 })
 
 
+push();
+fill('white');
+noStroke();
+rect(15, 15, 200, 50, 10);
+pop();
+fill("brown");
+text("Score: " + score, 30, 50);
+
+
+
 
 }
 

@@ -7,12 +7,12 @@ let mode;
 
 function preload() {
   game.preload();
-
-shing = loadSOund("assets/shing2.wav")
+  shing = loadSound("assets/shing2.wav")
 }
 
 function setup() {
   let gameCanvas = createCanvas(1000, 700); 
+
   gameCanvas.parent("gameCanvas");
   game.floor = 700;
   game.setup();
@@ -22,6 +22,7 @@ function setup() {
   fill("darkgreen");
   bg = loadImage("assets/instruc.png");
   startScr = loadImage("assets/startscr.png");
+  endScr = loadImage("assets/store.png");
 
 //   themeSong.loop();  
 //   themeSong.stop();
@@ -50,41 +51,35 @@ function draw() {
     // background(bg);
     // playsound();
   }
-
-
-
-
-
 }
 
-
-  // function playsound() 
-  // {
-  //   if(themeSong.isPlaying() == false) 
-  //   {
-  //     themeSong.play();
-  //   } 
-  // }
 
 
   // screen toggle
 function keyPressed(){
-    if (mode === 2 && keyCode === 32){
-        game.player.jump()
-    } else if (keyCode === ENTER){
+ if (keyCode === 32){
       if (mode === 0) {
         mode = 1;
         draw();
       } else if (mode == 1) {
         mode = 2;
         draw();
-      } else if (gameEnd) {
-        mode = 0;
-        score = 0;
-        game.trashes = [];
-        themeSong.stop();
-        loop();
-        draw();
+      } else if (mode == 2) {
+        if (gameEnd){
+        mode = 0 ;
+        score = 0;   
+        crashed = 0
+        game.tps = [];
+        game.shoppers = []
+        gameEnd = false
+    
+       loop();
+       draw(); 
+        
+        console.log("CRASHED: ", crashed, "Game end?", gameEnd)
+      } else {
+        game.player.jump()
+      }
       }
     }
     

@@ -125,18 +125,18 @@ if (crashed === 1){
   background(endScr)
   if (score === 1){
     let gameScore = "You hoarded " + score + " roll of toilet paper."
-      text(gameScore, 240, 50, 500)
+      text(gameScore, 260, 50, 500)
   } else {
   let gameScore = "You hoarded " + score + " rolls of toilet paper."
-  text(gameScore, 240, 50, 500)
+  text(gameScore, 260, 50, 500)
 }
   let highScore = "Your best TP run: " + localStorage.getItem("bestScore");
       push()
     
-      text (highScore, 330, 100, 300)
+      text (highScore, 350, 100, 300)
       pop()
       push()
-      text("Press SPACE to play again", 330, 600, 400)
+      text("Press SPACE to play again", 320, 600, 400)
       pop()
       noLoop()
 }

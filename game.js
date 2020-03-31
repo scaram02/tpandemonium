@@ -1,4 +1,5 @@
 let score = 0;
+let crashed = 0
 let gameEnd = false;
 let shing;
 
@@ -23,90 +24,6 @@ class Game {
     this.player.setup();
     // console.log(this.player.width, this.player.height)
   }
-
-
-
-
-
-
-
-  draw() {
-    this.background.draw();
-    this.player.draw();
-
-
-    // shopper appears!
-    if (frameCount % 320 === 0){
-      this.shoppers.push(new Shopper())
-    }
-    this.shoppers.forEach(
-      (shopper, index) => {
-        if (!shopper.img) shopper.preload();
-          shopper.draw();
-
-          // removes shopper when off screen
-    if (this.shopper.x + this.shopper.width <= 0){
-  this.shoppers.splice(index, 1)
-}
-
-    // to end the game
-     if (this.isShopperCollision(shopper, this.player)) {
-      console.log("GAME OVER");
-      noLoop();
-}
-
-    }
-
-
-    
-    )
-
-// TP appears!
-if (frameCount % 60 === 0) {
-      this.tps.push(new Tp ());
-}
-this.tps.forEach(
-  (tp, index) => {
-    if (!tp.img) tp.preload();
-      tp.draw();
-
-// removes TP when off screen
-if (this.tp.x + this.tp.width <= 0){
-  this.tps.splice(index, 1)
-}
-
-// removes TP upon collide
-if (this.isCollision(tp, this.player)) {
-  this.tps.splice(index, 1);
-}
-
-if (this.isCollision(tp, this.player)){
-  score++
-  shing.play();
-  console.log(score)
-}
-
-
-
-
-
-
-})
-
-
-push();
-fill('white');
-noStroke();
-rect(15, 15, 200, 50, 10);
-pop();
-fill("brown");
-text("Score: " + score, 30, 50);
-
-
-
-
-}
-
 
 // tp collision
 isCollision(tp, player) {
@@ -138,5 +55,108 @@ isShopperCollision(shopper, player) {
 
 
 
+
+  draw() {
+    this.background.draw();
+    this.player.draw();
+
+
+push();
+fill('white');
+noStroke();
+rect(15, 15, 200, 50, 10);
+// pop();
+fill("brown");
+text("Score: " + score, 30, 50);
+pop()
+
+// TP appears!
+if (frameCount % 60 === 0) {
+  this.tps.push(new Tp ());
+}
+this.tps.forEach(
+(tp, index) => {
+if (!tp.img) tp.preload();
+  tp.draw();
+
+// removes TP when off screen
+if (this.tp.x + this.tp.width <= 0){
+this.tps.splice(index, 1)
+}
+
+// removes TP upon collide
+if (this.isCollision(tp, this.player)) {
+this.tps.splice(index, 1);
+}
+
+if (this.isCollision(tp, this.player)){
+score++
+shing.play();
+console.log(score)
+}
+})
+
+
+    // shopper appears!
+    if (frameCount % 320 === 0){
+      this.shoppers.push(new Shopper())
+    }
+    this.shoppers.forEach(
+      (shopper, index) => {
+        if (!shopper.img) shopper.preload();
+          shopper.draw();
+
+          // removes shopper when off screen
+    if (this.shopper.x + this.shopper.width <= 0){
+  this.shoppers.splice(index, 1)
+}
+
+
+//     // to end the game
+    if (this.isShopperCollision(shopper, this.player)) {
+      crashed++
+     // console.log("GAME OVER"); 
+     // gameEnd = true;
+     // background("gray")
+     
+     // push()
+     // text("ahhhhh", 240, 150, 500)
+     // pop()
+     //  noLoop();
+    
+}
+
+
+
+
+if (crashed === 1){
+  gameEnd = true
+  background(endScr)
+  if (score === 1){
+    let gameScore = "You hoarded " + score + " roll of toilet paper."
+      text(gameScore, 240, 50, 500)
+  } else {
+  let gameScore = "You hoarded " + score + " rolls of toilet paper."
+  text(gameScore, 240, 50, 500)
+}
+  let highScore = "Your best TP run: " + localStorage.getItem("bestScore");
+      push()
+    
+      text (highScore, 330, 150, 300)
+      pop()
+      noLoop()
+}
+
+
+
+if (
+  !localStorage.getItem("bestScore") ||
+  localStorage.getItem("bestScore") < score
+) {
+  localStorage.setItem("bestScore", score);
+}
+    })
+
+} // draw
 
     }

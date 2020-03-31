@@ -1,8 +1,5 @@
 const game = new Game();
-// let yaySound;
-// let noooSound;
-// let floorSound;
-// let themeSong;
+
 let mode;
 
 function preload() {
@@ -20,9 +17,9 @@ function setup() {
   textSize(32);
   textFont("Georgia");
   fill("darkgreen");
-  bg = loadImage("assets/instruc.png");
+  // bg = loadImage("assets/start.png");
   startScr = loadImage("assets/startscr.png");
-  endScr = loadImage("assets/store.png");
+  endScr = loadImage("assets/store2.png");
 
 //   themeSong.loop();  
 //   themeSong.stop();
@@ -36,14 +33,20 @@ function draw() {
     push();
   fill("lightblue");
   noStroke();
-  rect(0, 335, 700, 50, 5, 5);
+  rect(0, 335, 740, 50, 5, 5);
   pop();
     fill('brown');
     text("Press SPACE to start!", 357, 370);
   }
   if (mode === 1) {
-    background(bg);
+    background("lightblue");
     text("Press SPACE to play!", 365, 680);
+    push()
+    fill("navy")
+    text("Press SPACE to: ", 100, 100, 400)
+    text("Hoard as much toilet paper as you can.", 100, 250, 600)
+    text("Maintain a healthy distance from other shoppers.", 100, 400, 900)
+    pop()
   }
 
   if (mode === 2) {
@@ -66,7 +69,7 @@ function keyPressed(){
         draw();
       } else if (mode == 2) {
         if (gameEnd){
-        mode = 0 ;
+        mode = 2 ;
         score = 0;   
         crashed = 0
         game.tps = [];

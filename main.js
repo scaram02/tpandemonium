@@ -39,11 +39,11 @@ function draw() {
   rect(0, 335, 700, 50, 5, 5);
   pop();
     fill('brown');
-    text("Press enter to start!", 357, 370);
+    text("Press SPACE to start!", 357, 370);
   }
   if (mode === 1) {
     background(bg);
-    text("Press enter to play!", 365, 680);
+    text("Press SPACE to play!", 365, 680);
   }
 
   if (mode === 2) {

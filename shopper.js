@@ -1,9 +1,9 @@
 let shopper;
 
 let object = [
-    {imgUrl: "assets/cart.png"},
-    {imgUrl: "assets/cart.png"},
-    {imgUrl: "assets/cart.png"}
+    {imgUrl: "assets/shopper4.png"},
+    {imgUrl: "assets/shopper4.png"},
+    {imgUrl: "assets/shopper4.png"}
 ]
 
 class Shopper {

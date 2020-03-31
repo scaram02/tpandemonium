@@ -66,7 +66,7 @@ function keyPressed(){
         draw();
       } else if (mode == 2) {
         if (gameEnd){
-        mode = 0 ;
+        mode = 2 ;
         score = 0;   
         crashed = 0
         game.tps = [];

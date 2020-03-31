@@ -114,16 +114,7 @@ console.log(score)
 
 //     // to end the game
     if (this.isShopperCollision(shopper, this.player)) {
-      crashed++
-     // console.log("GAME OVER"); 
-     // gameEnd = true;
-     // background("gray")
-     
-     // push()
-     // text("ahhhhh", 240, 150, 500)
-     // pop()
-     //  noLoop();
-    
+      crashed++  
 }
 
 
@@ -142,7 +133,10 @@ if (crashed === 1){
   let highScore = "Your best TP run: " + localStorage.getItem("bestScore");
       push()
     
-      text (highScore, 330, 150, 300)
+      text (highScore, 330, 100, 300)
+      pop()
+      push()
+      text("Press SPACE to play again", 330, 600, 400)
       pop()
       noLoop()
 }

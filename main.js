@@ -46,7 +46,7 @@ function draw() {
     text("Press SPACE to play!", 365, 680);
     push()
     fill("navy")
-    text("Press <SPACEBAR> to: ", 100, 100, 400)
+    text("Press SPACE to: ", 100, 100, 400)
     text("Hoard as much toilet paper as you can.", 100, 250, 600)
     text("Maintain a healthy distance from other shoppers.", 100, 400, 900)
     pop()

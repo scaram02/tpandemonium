@@ -92,13 +92,13 @@ this.tps.splice(index, 1);
 if (this.isCollision(tp, this.player)){
 score++
 shing.play();
-console.log(score)
+// console.log(score)
 }
 })
 
 
     // shopper appears!
-    if (frameCount % 320 === 0){
+    if (frameCount % 360 === 0){
       this.shoppers.push(new Shopper())
     }
     this.shoppers.forEach(
@@ -125,15 +125,15 @@ if (crashed === 1){
   background(endScr)
   if (score === 1){
     let gameScore = "You hoarded " + score + " roll of toilet paper."
-      text(gameScore, 260, 50, 500)
+      text(gameScore, 260, 50, 600)
   } else {
   let gameScore = "You hoarded " + score + " rolls of toilet paper."
-  text(gameScore, 260, 50, 500)
+  text(gameScore, 260, 50, 600)
 }
   let highScore = "Your best TP run: " + localStorage.getItem("bestScore");
       push()
     
-      text (highScore, 350, 100, 300)
+      text (highScore, 350, 100, 600)
       pop()
       push()
       text("Press SPACE to play again", 320, 600, 400)

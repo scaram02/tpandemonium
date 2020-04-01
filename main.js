@@ -1,8 +1,4 @@
 const game = new Game();
-// let yaySound;
-// let noooSound;
-// let floorSound;
-// let themeSong;
 let mode;
 
 function preload() {
@@ -23,9 +19,6 @@ function setup() {
   // bg = loadImage("assets/start.png");
   startScr = loadImage("assets/startscr.png");
   endScr = loadImage("assets/store2.png");
-
-//   themeSong.loop();  
-//   themeSong.stop();
 }
 
 function draw() {
@@ -54,8 +47,6 @@ function draw() {
 
   if (mode === 2) {
     game.draw();
-    // background(bg);
-    // playsound();
   }
 }
 
@@ -78,11 +69,11 @@ function keyPressed(){
         game.tps = [];
         game.shoppers = []
         gameEnd = false
-    
+        
        loop();
        draw(); 
         
-        console.log("CRASHED: ", crashed, "Game end?", gameEnd)
+        // console.log("CRASHED: ", crashed, "Game end?", gameEnd)
       } else {
         game.player.jump()
       }
@@ -90,6 +81,7 @@ function keyPressed(){
     }
     
 }
+
 
 
 window.addEventListener(

@@ -4,7 +4,7 @@ class Tp {
   constructor() {
     this.x = 1000; 
     // this.y = Math.random() * 500
-    this.y = Math.floor(Math.random() * (700 - 100 + 1) + 200);
+    this.y = Math.floor(Math.random() * (700 - 130 + 1) + 100);
 
     this.width = 65;
     this.height = 65;
@@ -31,4 +31,3 @@ if (this.x > 1000){
   }
 
 }
-

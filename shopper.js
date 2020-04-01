@@ -31,7 +31,7 @@ this.y = 475
 if (this.x > 1000){
   this.x = 600
 } else {
-  this.x-= 4
+  this.x-= 6
 }
     image(this.img, this.x, this.y, this.width, this.height);
 

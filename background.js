@@ -17,7 +17,7 @@ class Background {
 
   draw() {
 
-    this.xStore -= 1;
+    this.xStore -= 3;
     image(this.bgStore, this.xStore, 0, width);
     image(this.bgStore, this.xStore + width, 0, width);
 
@@ -28,7 +28,7 @@ class Background {
 
    
 
-    this.xShelves -= 4;
+    this.xShelves -= 6;
     image(this.bgShelves, this.xShelves, 150, width);
     image(this.bgShelves, this.xShelves + width, 150, width);
 
